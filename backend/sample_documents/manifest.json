@@ -1,0 +1,46 @@
+{
+  "documents": [
+    {
+      "filename": "chinh_sach_mat_khau.md",
+      "title": "Chính sách Mật khẩu Nội bộ",
+      "file_type": "md",
+      "allowed_roles": ["admin", "security_manager", "employee"],
+      "description": "Yêu cầu về độ phức tạp, chu kỳ đổi mật khẩu, MFA"
+    },
+    {
+      "filename": "quy_trinh_ung_pho_su_co.md",
+      "title": "Quy trình Ứng phó Sự cố An toàn Thông tin",
+      "file_type": "md",
+      "allowed_roles": ["admin", "security_manager"],
+      "description": "Phân loại mức độ, 5 bước xử lý sự cố — chỉ Admin/Security Manager"
+    },
+    {
+      "filename": "chinh_sach_kiem_soat_truy_cap.pdf",
+      "title": "Chính sách Kiểm soát Truy cập",
+      "file_type": "pdf",
+      "allowed_roles": ["admin", "security_manager", "employee"],
+      "description": "Nguyên tắc đặc quyền tối thiểu, phân loại vai trò, rà soát định kỳ"
+    },
+    {
+      "filename": "checklist_tuan_thu_iso27001.pdf",
+      "title": "Checklist Tuân thủ ISO/IEC 27001",
+      "file_type": "pdf",
+      "allowed_roles": ["admin", "security_manager"],
+      "description": "Checklist tự đánh giá trước audit — chỉ Admin/Security Manager"
+    },
+    {
+      "filename": "quy_dinh_su_dung_thiet_bi_ca_nhan.docx",
+      "title": "Quy định Sử dụng Thiết bị Cá nhân (BYOD)",
+      "file_type": "docx",
+      "allowed_roles": ["admin", "security_manager", "employee"],
+      "description": "Yêu cầu bảo mật thiết bị cá nhân, xử lý khi mất thiết bị"
+    },
+    {
+      "filename": "huong_dan_bao_cao_su_co_bao_mat.html",
+      "title": "Hướng dẫn Báo cáo Sự cố Bảo mật",
+      "file_type": "html",
+      "allowed_roles": ["admin", "security_manager", "employee", "guest"],
+      "description": "Tài liệu công khai — hướng dẫn cách báo cáo sự cố, ai cũng xem được"
+    }
+  ]
+}

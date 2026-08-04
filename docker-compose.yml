@@ -1,0 +1,17 @@
+# Skeleton — sẽ hoàn thiện đầy đủ ở Bước 24 (Phase 7).
+# Hiện tại chỉ khai báo cấu trúc 4 service dự kiến, CHƯA build/run.
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    # environment, depends_on: sẽ thêm khi có DB thật (Bước 2, 7)
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    # Next.js mặc định chạy port 3000, khác với React/Vite (5173) ở dự án trước
+
+  # postgres:      # sẽ thêm ở Bước 2
+  # qdrant:        # sẽ thêm ở Bước 7
