@@ -25,7 +25,6 @@ def chat(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ) -> ChatResponse:
-    # ... giữ nguyên toàn bộ nội dung đã có từ Bước 13 ...
     user_role = current_user.role.value
     session = get_or_create_session(db, user_id=current_user.id, session_id=payload.session_id)
 
@@ -35,10 +34,13 @@ def chat(
     sources = list(dict.fromkeys(chunk.title for chunk in chunks))
 
     save_message(db, session.id, role="user", content=payload.message)
-    save_message(db, session.id, role="assistant", content=answer, sources=sources)
+    # save_message (Bước 13) đã return đúng object ChatMessage có .id — chỉ
+    # cần giữ lại biến này, KHÔNG cần sửa gì bên trong chat_history_service.
+    assistant_message = save_message(db, session.id, role="assistant", content=answer, sources=sources)
 
-    return ChatResponse(answer=answer, sources=sources, session_id=session.id)
-
+    return ChatResponse(
+        answer=answer, sources=sources, session_id=session.id, message_id=assistant_message.id,
+    )
 
 @router.get("/sessions", response_model=list[ChatSessionResponse])
 def get_my_sessions(

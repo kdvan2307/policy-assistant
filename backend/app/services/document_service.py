@@ -8,6 +8,8 @@ from app.services.document_reader import read_document
 from app.services.chunk_service import chunk_text
 from app.services.embedding_service import embed_chunks
 from app.services.vector_store import upsert_chunk
+from app.models.models import Document
+from sqlalchemy.orm import Session
 
 ALLOWED_FILE_TYPES = {"md", "pdf", "docx", "html"}
 UPLOAD_DIR = Path("uploaded_documents")
@@ -71,3 +73,5 @@ def ingest_document(db: Session, document: Document, file_path: str) -> int:
 
     db.commit()
     return len(chunks)
+def list_documents(db: Session) -> list[Document]:
+    return db.query(Document).order_by(Document.created_at.desc()).all()
