@@ -107,23 +107,28 @@ npm run dev
 ```
 
 ## Cấu trúc thư mục
+
+```text
 backend/
 ├── app/
-│ ├── routers/ # API endpoints: auth, admin, chat
-│ ├── services/ # Toàn bộ logic nghiệp vụ — xem README_rag.md,
-│ │ # README_auth.md, README_chat_tools.md
-│ ├── middlewares/ # Logging middleware
-│ ├── models/ # SQLAlchemy models (PostgreSQL)
-│ ├── schemas/ # Pydantic schemas (request/response API)
-│ └── database/ # Kết nối PostgreSQL
-├── sample_documents/ # 6 tài liệu mẫu (Bước 5) — dữ liệu demo, ingest thủ công
-├── uploaded_documents/ # Tài liệu do Admin upload qua UI (runtime, có volume Docker)
-├── tests/ # Unit test (pytest)
+│   ├── routers/        # API endpoints: auth, admin, chat
+│   ├── services/       # Toàn bộ logic nghiệp vụ
+│   │                   # Xem README_rag.md,
+│   │                   # README_auth.md, README_chat_tools.md
+│   ├── middlewares/    # Logging middleware
+│   ├── models/         # SQLAlchemy models (PostgreSQL)
+│   ├── schemas/        # Pydantic schemas
+│   └── database/       # Kết nối PostgreSQL
+├── sample_documents/   # 6 tài liệu mẫu
+├── uploaded_documents/ # Tài liệu Admin upload
+└── tests/              # Unit test (pytest)
+
 frontend/
-├── src/
-│ ├── app/ # Route theo App Router: /login, /chat, /admin
-│ ├── components/ # UI: ChatWindow, FeedbackButtons, admin/*
-│ └── services/ # api.js (gọi backend), auth.js (quản lý token)
+└── src/
+    ├── app/            # /login, /chat, /admin
+    ├── components/     # UI components
+    └── services/       # api.js, auth.js
+```
 ## Chạy test
 
 ```bash
